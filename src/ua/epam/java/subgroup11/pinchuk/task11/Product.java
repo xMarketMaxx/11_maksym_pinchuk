@@ -6,12 +6,10 @@ public abstract class Product {
 	private int price;
 
 	public Product() {
-
 	}
 
 	public Product(String title) {
 		this.title = title;
-
 	}
 
 	public String getTitle() {
