@@ -1,4 +1,4 @@
-package ua.epam.java.subgroup11.pinchuk.task11.musicdepartment.guitar;
+package ua.epam.java.subgroup11.pinchuk.task1.task11.musicdepartment.guitar;
 
 public class AcousticGuitar extends Guitar {
 
@@ -7,8 +7,12 @@ public class AcousticGuitar extends Guitar {
 	public AcousticGuitar() {
 	}
 
-	public AcousticGuitar(String title) {
-		super(title);
+	public AcousticGuitar(String title, int price, String color, int stringsNumber, int soundHoleSize) {
+		super(title, price, color, stringsNumber);
+		if (soundHoleSize < 0) {
+			throw new IllegalArgumentException();
+		}
+		this.soundHoleSize = soundHoleSize;
 	}
 
 	public int getSoundHoleSize() {
@@ -43,7 +47,6 @@ public class AcousticGuitar extends Guitar {
 
 	@Override
 	public String toString() {
-		return super.toString() + 
-				", soundhole size:" + soundHoleSize;
+		return super.toString() + ", soundhole size:" + soundHoleSize;
 	}
 }

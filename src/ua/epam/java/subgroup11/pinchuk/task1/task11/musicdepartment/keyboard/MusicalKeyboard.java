@@ -1,6 +1,6 @@
-package ua.epam.java.subgroup11.pinchuk.task11.musicdepartment.keyboard;
+package ua.epam.java.subgroup11.pinchuk.task1.task11.musicdepartment.keyboard;
 
-import ua.epam.java.subgroup11.pinchuk.task11.Product;
+import ua.epam.java.subgroup11.pinchuk.task1.task11.Product;
 
 public abstract class MusicalKeyboard extends Product {
 
@@ -13,8 +13,25 @@ public abstract class MusicalKeyboard extends Product {
 	public MusicalKeyboard() {
 	}
 
-	public MusicalKeyboard(String title) {
-		super(title);
+	public MusicalKeyboard(String title, int price, int keysNumber, int height, int width, int length, String color) {
+		super(title, price);
+		if (keysNumber < 0) {
+			throw new IllegalArgumentException("Number of keys cannot be less than 0 (sezo)");
+		}
+		if (height < 0) {
+			throw new IllegalArgumentException("Height cannot be less than 0 (sezo)");
+		}
+		if (width < 0) {
+			throw new IllegalArgumentException("Width cannot be less than 0 (sezo)");
+		}
+		if (length < 0) {
+			throw new IllegalArgumentException("Length cannot be less than 0 (sezo)");
+		}
+		this.keysNumber = keysNumber;
+		this.height = height;
+		this.width = width;
+		this.length = length;
+		this.color = color;
 	}
 
 	public int getKeysNumber() {

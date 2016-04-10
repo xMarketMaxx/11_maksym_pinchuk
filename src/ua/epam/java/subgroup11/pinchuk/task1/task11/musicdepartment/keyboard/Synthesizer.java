@@ -1,4 +1,4 @@
-package ua.epam.java.subgroup11.pinchuk.task11.musicdepartment.keyboard;
+package ua.epam.java.subgroup11.pinchuk.task1.task11.musicdepartment.keyboard;
 
 public class Synthesizer extends MusicalKeyboard {
 
@@ -9,8 +9,15 @@ public class Synthesizer extends MusicalKeyboard {
 	public Synthesizer() {
 	}
 
-	public Synthesizer(String title) {
-		super(title);
+	public Synthesizer(String title, int price, int keysNumber, int height, int width, int length, String color,
+			boolean usbInput, boolean autoAccompaniment, int numberOfPresetSong) {
+		super(title, price, keysNumber, height, width, length, color);
+		if (numberOfPresetSong < 0) {
+			throw new IllegalArgumentException("Number of preset song cannot be less than 0 (sezo)");
+		}
+		this.autoAccompaniment = autoAccompaniment;
+		this.usbInput = usbInput;
+		this.numberOfPresetSong = numberOfPresetSong;
 	}
 
 	public boolean isUsbInput() {
@@ -74,7 +81,7 @@ public class Synthesizer extends MusicalKeyboard {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", USB input:" + usbInput + ", Auto accompaniment:" + autoAccompaniment
-				+ "Number of preset song:" + numberOfPresetSong;
+		return super.toString() + ", USB input:" + usbInput + ", auto accompaniment:" + autoAccompaniment
+				+ ", number of preset song:" + numberOfPresetSong;
 	}
 }

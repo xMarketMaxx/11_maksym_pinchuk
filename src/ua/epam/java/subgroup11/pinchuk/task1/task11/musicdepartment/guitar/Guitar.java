@@ -1,6 +1,6 @@
-package ua.epam.java.subgroup11.pinchuk.task11.musicdepartment.guitar;
+package ua.epam.java.subgroup11.pinchuk.task1.task11.musicdepartment.guitar;
 
-import ua.epam.java.subgroup11.pinchuk.task11.Product;
+import ua.epam.java.subgroup11.pinchuk.task1.task11.Product;
 
 public abstract class Guitar extends Product {
 
@@ -10,8 +10,13 @@ public abstract class Guitar extends Product {
 	public Guitar() {
 	}
 
-	public Guitar(String title) {
-		super(title);
+	public Guitar(String title, int price, String color, int stringsNumber) {
+		super(title, price);
+		if(stringsNumber < 0){
+			throw new IllegalArgumentException();
+		}
+		this.color = color;
+		this.stringsNumber = stringsNumber;
 	}
 
 	public int getStringsCount() {

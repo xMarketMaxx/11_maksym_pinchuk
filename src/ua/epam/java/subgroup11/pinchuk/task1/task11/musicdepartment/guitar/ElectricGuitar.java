@@ -1,4 +1,4 @@
-package ua.epam.java.subgroup11.pinchuk.task11.musicdepartment.guitar;
+package ua.epam.java.subgroup11.pinchuk.task1.task11.musicdepartment.guitar;
 
 public class ElectricGuitar extends Guitar {
 
@@ -7,8 +7,8 @@ public class ElectricGuitar extends Guitar {
 	public ElectricGuitar() {
 	}
 
-	public ElectricGuitar(String title, String pickup) {
-		super(title);
+	public ElectricGuitar(String title, int price, String color, int stringsNumber, String pickup) {
+		super(title, price, color, stringsNumber);
 		this.pickup = pickup;
 	}
 

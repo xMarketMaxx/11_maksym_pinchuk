@@ -1,4 +1,4 @@
-package ua.epam.java.subgroup11.pinchuk.task11;
+package ua.epam.java.subgroup11.pinchuk.task1.task11;
 
 public abstract class Product {
 
@@ -8,8 +8,12 @@ public abstract class Product {
 	public Product() {
 	}
 
-	public Product(String title) {
+	public Product(String title, int price) {
 		this.title = title;
+		if(price < 0){
+			throw new IllegalArgumentException();
+		}
+		this.price = price;
 	}
 
 	public String getTitle() {
